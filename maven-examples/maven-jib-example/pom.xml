@@ -62,27 +62,6 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                    <from>
-                        <image>${env.ARTIFACTORY_DOCKER_REGISTRY}/adoptopenjdk:8-jdk-hotspot</image>
-                        <auth>
-                            <username>${env.ARTIFACTORY_USERNAME}</username>
-                            <password>${env.ARTIFACTORY_PASSWORD}</password>
-                        </auth>
-                    </from>
-                    <to>
-                        <image>${env.ARTIFACTORY_DOCKER_REGISTRY}/${project.artifactId}</image>
-                        <auth>
-                            <username>${env.ARTIFACTORY_USERNAME}</username>
-                            <password>${env.ARTIFACTORY_PASSWORD}</password>
-                        </auth>
-                    </to>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
