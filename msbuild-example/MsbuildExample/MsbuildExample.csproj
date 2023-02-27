@@ -29,7 +29,7 @@
     <Exec Command="jfrog rt download repository/path/to/files destination\path\ $(BuildFlags)"/>
     -->
     
-    <Exec Command="jfrog rt download msbuild-local/MsbuildLibrary/bin/Debug/MsbuildLibrary.dll dependencies\ --flat=true $(BuildFlags)"/>
+    <Exec Command="jf rt download msbuild-local/MsbuildLibrary/bin/Debug/MsbuildLibrary.dll dependencies\ --flat=true $(BuildFlags)"/>
   </Target>
 
   <!-- <ItemGroup>
@@ -46,7 +46,7 @@
     <Exec Command="jfrog rt upload $(ArtifatsPatternPath) repository/destination/path $(BuildFlags)"/>
     -->
     
-    <Exec Command="jfrog rt upload $(ArtifatsPatternPath) msbuild-local/$(BuildName)/ --flat=false $(BuildFlags)"/>
+    <Exec Command="jf rt upload $(ArtifatsPatternPath) msbuild-local/$(BuildName)/ --flat=false $(BuildFlags)"/>
   </Target>
 
   <Target Name="PublishBuildInfo" AfterTargets="AfterBuild;UploadArtifacts" Condition=" '$(ArtifactoryPublish)' == 'true' ">
@@ -58,7 +58,7 @@
     -->
     
     <!--Publish build-info to Artifactory using JFrog CLI-->
-    <Exec Command="jfrog rt build-publish $(BuildName) $(BuildNumber)"/>
+    <Exec Command="jf rt build-publish $(BuildName) $(BuildNumber)"/>
   </Target>
 
   <!--Optional Target, perform JFrog Xray scan-->
